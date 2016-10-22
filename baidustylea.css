@@ -1,0 +1,6 @@
+/*ie中的各别属性*/
+#search{position: absolute;
+left: 50%;
+margin-left: -320px;
+}
+.gengduo {overflow:auto;zoom:1;}
