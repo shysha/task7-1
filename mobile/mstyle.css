@@ -1,0 +1,661 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pc-none {
+    display: none;
+}
+
+input,
+button,
+textarea {
+    border: 0;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background: #edeeef;
+}
+
+
+/*引用百度icon字体*/
+
+@font-face {
+    font-family: icons;
+    src: url(http://m.baidu.com/static/index/iconfont/iconfont_b7cfae65.eot);
+    src: url(http://m.baidu.com/static/index/iconfont/iconfont_b7cfae65.eot#iefix) format('embedded-opentype'), url(http://m.baidu.com/static/index/iconfont/iconfont_b7cfae65.woff) format('woff'), url(http://m.baidu.com/static/index/iconfont/iconfont_b7cfae65.ttf) format('truetype'), url(http://m.baidu.com/static/index/iconfont/iconfont_b7cfae65.svg?#iconfont) format('svg');
+}
+
+
+/*清楚浮动*/
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    background: #777;
+}
+
+
+/*左上角天气*/
+
+.weather {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 5px 8px;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+.weather div {
+    display: inline-block;
+}
+
+.rain {
+    height: 40px;
+    display: inline-block;
+}
+
+.rain img {}
+
+.rain span {
+    font-size: 22px;
+    color: #999;
+    padding-left: 4px;
+    position: relative;
+    top: -10px;
+}
+
+.rain span:after {
+    content: "\e814";
+    color: #b6b7ba;
+    font: 20px/1 icons;
+    position: absolute;
+    top: 5px;
+    right: -5px;
+}
+
+
+/*头部*/
+
+.header {
+    padding-bottom: 10px;
+}
+
+.user-icon {
+    position: relative;
+    height: 54px;
+}
+
+.user-icon a {
+    color: #9b9b9b;
+    position: absolute;
+    top: 0;
+    right: 8px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.icon-username:before {
+    content: "\e809";
+    color: #666;
+    font: 24px/1 icons;
+}
+
+.logo {
+    padding: 17px 0 15px;
+}
+
+.header-form {
+    height: 42px;
+    margin: 0 8px;
+    border: 1px solid #c3c4c5;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px 0 #dfdfdf;
+    background: #fff;
+    text-align: left;
+    position: relative;
+}
+
+#serch-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+}
+
+.serch-input {
+    display: block;
+    resize: none;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 7px 42px 7px 6px;
+    line-height: 28px;
+    border: 0;
+    font-size: 18px;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+}
+
+
+/*button 承载层*/
+
+.btn-wrapper {
+    width: 85px;
+    position: relative;
+}
+
+.voice-logo {
+    width: 39px;
+    height: 39px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: -38px;
+}
+
+.voice-logo:before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    border: 4px solid transparent;
+    border-top-color: #717077;
+}
+
+.voice-logo:after {
+    content: "";
+    background: url("images/callicon.png");
+    background-size: 37px 20px;
+    display: inline-block;
+    height: 20px;
+    width: 15px;
+    margin-top: 10px;
+}
+
+.search-btn {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    border: 0;
+    height: 43px;
+    width: 85px;
+    color: #fff;
+    background: #38f;
+    font-size: 16px;
+    border-top: 1px solid #38f;
+    border-bottom: 1px solid #38f;
+    line-height: 42px;
+    letter-spacing: -1px;
+}
+
+
+/*头部导航*/
+
+.header-nav {
+    margin: 17px 0 14px;
+}
+
+.header-nav a {
+    color: #262626;
+    float: left;
+    width: 16%;
+    font-size: 12px;
+}
+
+.header-nav a i {
+    display: block;
+    margin-bottom: 4px;
+    height: 24px;
+    font-size: 19px;
+    color: #666;
+}
+
+
+/*使用百度字体icon*/
+
+.nav-news:before {
+    content: "\e799";
+    font: 24px/1 icons;
+}
+
+.nav-book:before {
+    content: "\e801";
+    font: 24px/1 icons;
+}
+
+.inav-video:before {
+    content: "\e802";
+    font: 24px/1 icons;
+}
+
+.nav-life:before {
+    content: "\e831";
+    font: 24px/1 icons;
+}
+
+.nav-map:before {
+    content: "\e804";
+    font: 24px/1 icons;
+}
+
+.nav-more:before {
+    content: "\e812";
+    font: 24px/1 icons;
+}
+
+.header-nav a:nth-child(1) {
+    margin-left: 2%;
+}
+
+.header-nav a:nth-child(6) {
+    margin-right: 2%;
+}
+
+
+/*main*/
+
+.main {
+    position: relative;
+    padding: 2px 8px 10px;
+}
+
+.main-nav {
+    background: #fff;
+}
+
+
+/*title 公用样式*/
+
+.title {
+    margin: 2px 14px 0;
+    height: 40px;
+    text-align: left;
+    position: relative;
+}
+
+.title h2 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #999;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.more {
+    position: absolute;
+    right: -12px;
+    top: 0;
+    width: 40px;
+    height: 34px;
+    line-height: 40px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.icon-tt:after {
+    content: "\e650";
+    color: #b6b7ba;
+    font: 20px/34px icons;
+}
+
+.main-nav-content {
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.icon-re:before {
+    content: "\e60d";
+    color: #b6b7ba;
+    font: 18px/34px icons;
+}
+
+.main-nav-content a {
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 6px;
+    width: 25%;
+    height: 42px;
+    line-height: 42px;
+    color: #262626;
+    position: relative;
+}
+
+.main-nav-content a span {
+    display: inline-block;
+    height: 42px;
+    padding: 0 6px 0 5px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.main-nav-content .icon-plus {
+    font-size: 24px;
+    color: #b6b7ba;
+    line-height: 42px;
+}
+
+.new span:after {
+    content: "";
+    width: 6px;
+    height: 4px;
+    background: #f74747;
+    border-radius: 3px;
+    position: absolute;
+    top: 11px;
+    right: 0;
+}
+
+.main-content {
+    background: #fff;
+    margin-top: 8px;
+}
+
+.title span {
+    position: absolute;
+    right: 22px;
+    width: 82px;
+    height: 38px;
+    display: inline-block;
+    line-height: 38px;
+    padding-left: 10px;
+    color: #262626;
+    font-size: 14px;
+    text-align: center;
+}
+
+.title span i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #999;
+}
+
+.hot {
+    list-style: none;
+    padding: 0 14px;
+    text-align: left;
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.hot li {
+    float: left;
+    display: inline-block;
+    width: 50%;
+    height: 42px;
+    line-height: 42px;
+    vertical-align: top;
+}
+
+.hot li:nth-child(even) a {
+    text-indent: 14px;
+}
+
+.hot li a {
+    color: #262626;
+    display: inline-block;
+    max-width: 86%;
+    position: relative;
+}
+
+.hot-new:after {
+    content: "\e653";
+    font: 20px/1 icons;
+    color: #fb4343;
+    position: absolute;
+    top: 2px;
+    right: -17px;
+}
+
+.hot-search {
+    text-align: right;
+    border-top: 1px solid #f4f5f6;
+    line-height: 42px;
+}
+
+.hot-search a {
+    display: inline-block;
+    padding-right: 14px;
+    font-size: 14px;
+    color: #0058d2;
+    text-indent: -5px;
+}
+
+.icon-arrow:before {
+    content: "\e62f";
+    color: #0058d2;
+    font: 13px/1 icons;
+}
+
+
+/*生活服务*/
+
+.life-service {
+    margin-top: 8px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.life-service-content {
+    margin-top: -5px;
+}
+
+.gps {
+    position: relative;
+    margin: 8px 14px 14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    color: #262626;
+}
+
+.gps-info {
+    display: inline-block;
+}
+
+.gps-info p {
+    padding-right: 70px;
+}
+
+.gps button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 30px;
+    border: 1px solid #d2d6dd;
+    border-radius: 2px;
+    text-indent: 20px;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+}
+
+.gps i:before {
+    content: "\e60a";
+    color: #919498;
+    font: 20px/20px icons;
+    position: absolute;
+    right: 43px;
+}
+
+
+/*life-list*/
+
+.life-list {
+    margin-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    list-style: none;
+}
+
+.life-list li {
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+    margin-left: -6px;
+}
+
+.life-list a {
+    padding: 0 10px;
+    display: inline-block;
+    color: #262626;
+    text-align: center;
+}
+
+.life-list p {
+    font-size: 14px;
+    height: 18px;
+    line-height: 18px;
+    margin: 3px 0 8px;
+    display: block;
+}
+
+
+/*life-list图标样式*/
+
+.life-list .film {
+    background: #b493db;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin: 0 auto;
+}
+
+.life-list .film:before {
+    content: "\e786";
+    font-size: 26px;
+    line-height: 42px;
+    color: #fff;
+    font-family: icons;
+}
+
+.life-list .group {
+    background: #ff6fbf;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin: 0 auto;
+}
+
+.life-list .group:before {
+    content: "\e78f";
+    font-size: 26px;
+    line-height: 42px;
+    color: #fff;
+    font-family: icons;
+}
+
+.life-list .takeaway {
+    background: #ff6b70;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin: 0 auto;
+}
+
+.life-list .takeaway:before {
+    content: "\e792";
+    font-size: 26px;
+    line-height: 42px;
+    color: #fff;
+    font-family: icons;
+}
+
+.life-list .car {
+    background: #93a4b3;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin: 0 auto;
+}
+
+.life-list .car:before {
+    content: "\e785";
+    font-size: 26px;
+    line-height: 42px;
+    color: #fff;
+    font-family: icons;
+}
+
+.life-list .hotel {
+    background: #6f99de;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin: 0 auto;
+}
+
+.life-list .hotel:before {
+    content: "\e78a";
+    font-size: 26px;
+    line-height: 42px;
+    color: #fff;
+    font-family: icons;
+}
+
+.life-list .food {
+    background: #ffa868;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin: 0 auto;
+}
+
+.life-list .food:before {
+    content: "\e78d";
+    font-size: 26px;
+    line-height: 42px;
+    color: #fff;
+    font-family: icons;
+}
+
+.life-list .ktv {
+    background: #b493db;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin: 0 auto;
+}
+
+.life-list .ktv:before {
+    content: "\e784";
+    font-size: 26px;
+    line-height: 42px;
+    color: #fff;
+    font-family: icons;
+}
+
+.life-list .bank {
+    background: #ff6b70;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin: 0 auto;
+}
+
+.life-list .bank:before {
+    content: "\e829";
+    font-size: 26px;
+    line-height: 42px;
+    color: #fff;
+    font-family: icons;
+}
